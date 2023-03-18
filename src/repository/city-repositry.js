@@ -1,4 +1,4 @@
-const city = require('../models/city');
+// const city = require('../models/city');
 const { City }=require('../models/index');
 
 class CityRepository{
@@ -29,9 +29,13 @@ class CityRepository{
         const city= await City.update(data,{
             where:{
                 id:cityId
-            }
+            },
+        
         });
-        return city;
+        // const city=await City.findByPK(cityId);
+        // city.name=data.name;
+        // await city.save();
+         return city;
     } catch (error) {
         console.log("Somthing went wrong in the repository layer");
         throw{error};

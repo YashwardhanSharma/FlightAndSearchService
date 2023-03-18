@@ -1,6 +1,6 @@
-// const { application } = require('express');
+//const { application } = require('express');
 const {CityService} = require('../services/index');
-const c6ityService=new CityService();
+const cityService=new CityService();
 const create= async (req,res)=>{
 try {
     const city = await cityService.createCity(req.body);
