@@ -6,10 +6,10 @@ const {PORT}=require('./config/serverConfig');
 
 const ApiRoutes=require('./routes/index');
 
-const CityRepository=require('./repository/city-repositry');
+//const CityRepository=require('./repository/city-repositry');
 
 const db =require('./models/index');
-const {City,Airport}=require('./models/index');
+const {Airplane}=require('./models/index');
 
 const setupAndStartServer = async () => {
 
@@ -26,7 +26,11 @@ const setupAndStartServer = async () => {
     if(process.env.SYNC_DB){
    db.sequelize.sync({alter:true});}
 
-//   console.log(city,airports);
+   await Airplane.create({
+    modelNumber:'Bombarderdier CRJ',
+    capacity:400
+   });
+
     });
 
 }
