@@ -3,7 +3,7 @@ const {FlightRepository,AirplaneRepository}=require('../repository/index');
 class FlightService{
     constructor (){
         this.airplaneRepository=new AirplaneRepository();
-        this.FlightRepository=new FlightRepository();
+        this.flightRepository=new FlightRepository();
     }
     async createFlight(data){
         try {
